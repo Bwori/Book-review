@@ -17,6 +17,19 @@ class BooksController < ApplicationController
     		    render'new'
             end
         end
+        def edit
+        end
+        def update
+            if @book.update(book_params)
+                redirect_to book_path(@book)
+            else
+                render 'edit'
+             end
+         end
+        def destroy
+            @book.destroy
+            redirect_to root_path        
+        end
         
     private 
 	    def book_params
