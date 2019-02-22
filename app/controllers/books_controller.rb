@@ -24,8 +24,8 @@ class BooksController < ApplicationController
                 redirect_to book_path(@book)
             else
                 render 'edit'
-             end
-         end
+            end
+        end
         def destroy
             @book.destroy
             redirect_to root_path        
